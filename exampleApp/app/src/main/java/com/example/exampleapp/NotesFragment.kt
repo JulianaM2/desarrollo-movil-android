@@ -55,5 +55,4 @@ class NotesFragment : Fragment(), OnNoteSelected {
         intent.putExtra("title", note.title)
         startActivity(intent)
     }
-
 }
