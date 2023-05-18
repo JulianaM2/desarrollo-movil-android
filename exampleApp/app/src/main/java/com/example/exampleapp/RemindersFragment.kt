@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exampleapp.dao.NotesDao
+import com.example.exampleapp.entity.Note
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,5 +59,10 @@ class RemindersFragment : Fragment(), OnNoteSelected {
         intent.putExtra("id", note.mId)
         intent.putExtra("title", note.title)
         startActivity(intent)
+    }
+
+    override fun deleteNote(note: Note) {
+        notesDao.delete(note)
+        showNotes()
     }
 }

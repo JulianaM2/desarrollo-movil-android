@@ -4,5 +4,6 @@ import com.example.exampleapp.entity.Note
 
 interface OnNoteSelected {
    fun onNoteSelected(id: Int)
+   fun deleteNote(note: Note)
 
 }

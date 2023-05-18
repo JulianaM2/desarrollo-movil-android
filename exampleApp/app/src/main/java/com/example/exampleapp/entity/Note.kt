@@ -13,4 +13,5 @@ class Note {
 
     var title: String? = ""
     var reminder: Boolean? = false
+    var date: String? = null
 }

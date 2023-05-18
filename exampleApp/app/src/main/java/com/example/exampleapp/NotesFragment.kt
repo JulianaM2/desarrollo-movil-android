@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exampleapp.dao.NotesDao
+import com.example.exampleapp.entity.Note
 
 
 /**
@@ -54,5 +55,10 @@ class NotesFragment : Fragment(), OnNoteSelected {
         intent.putExtra("id", note.mId)
         intent.putExtra("title", note.title)
         startActivity(intent)
+    }
+
+    override fun deleteNote(note: Note) {
+        notesDao.delete(note)
+        showNotes()
     }
 }
