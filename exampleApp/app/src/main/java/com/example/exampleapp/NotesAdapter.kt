@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.exampleapp.entity.Note
 
@@ -27,12 +28,14 @@ class NotesAdapter (
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note = notes[position]
         holder.noteItemView.text = note.title
+
         if(note.date != null) {
             val date =  holder.itemView.findViewById<TextView>(R.id.reminderDateText)
             date.text = note.date
             date.visibility = View.VISIBLE
         }
-        holder.noteItemView.setOnClickListener(View.OnClickListener {
+
+        holder.itemView.findViewById<CardView>(R.id.noteCard).setOnClickListener(View.OnClickListener {
                 view -> listener.onNoteSelected(note.mId!!) })
         val button = holder.itemView.findViewById<ImageButton>(R.id.deleteNote1);
         println(button)
