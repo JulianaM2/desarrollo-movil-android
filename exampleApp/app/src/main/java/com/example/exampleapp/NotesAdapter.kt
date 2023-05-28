@@ -38,7 +38,6 @@ class NotesAdapter (
         holder.itemView.findViewById<CardView>(R.id.noteCard).setOnClickListener(View.OnClickListener {
                 view -> listener.onNoteSelected(note.mId!!) })
         val button = holder.itemView.findViewById<ImageButton>(R.id.deleteNote1);
-        println(button)
         button.setOnClickListener(View.OnClickListener {
                 view -> listener.deleteNote(note)
         })

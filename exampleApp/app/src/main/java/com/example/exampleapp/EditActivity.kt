@@ -32,7 +32,7 @@ class EditActivity : AppCompatActivity() {
             if(note.date != null) {
                 var date = note.date!!.split('/')
                 var datePicker = findViewById<DatePicker>(R.id.reminderDate)
-                datePicker.updateDate(date[2].toInt(), date[1].toInt(), date[0].toInt())
+                datePicker.updateDate(date[2].toInt(), date[1].toInt() - 1, date[0].toInt())
                 datePicker.visibility = View.VISIBLE
             }
         }
